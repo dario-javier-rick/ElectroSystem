@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-12T17:24:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Contable" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a71f7140-39cd-4dc7-a75e-b6c558fdf740">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ingresos" class="java.util.List">
+		<fieldDescription><![CDATA[ingresos]]></fieldDescription>
+	</field>
+	<field name="egresos" class="java.util.List">
+		<fieldDescription><![CDATA[egresos]]></fieldDescription>
+	</field>
+	<field name="egresosDS" class="net.sf.jasperreports.engine.JRDataSource">
+		<fieldDescription><![CDATA[egresosDS]]></fieldDescription>
+	</field>
+	<field name="ingresosDS" class="net.sf.jasperreports.engine.JRDataSource">
+		<fieldDescription><![CDATA[ingresosDS]]></fieldDescription>
+	</field>
+	<field name="totalIngresos" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalIngresos]]></fieldDescription>
+	</field>
+	<field name="totalEgresos" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalEgresos]]></fieldDescription>
+	</field>
+	<field name="saldo" class="java.lang.Double">
+		<fieldDescription><![CDATA[saldo]]></fieldDescription>
+	</field>
+	<field name="ini" class="java.util.Calendar">
+		<fieldDescription><![CDATA[ini]]></fieldDescription>
+	</field>
+	<field name="fin" class="java.util.Calendar">
+		<fieldDescription><![CDATA[fin]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="70" height="70" uuid="ea7616ed-b8a4-4847-b56c-5321b71f62e4"/>
+				<imageExpression><![CDATA["src/recursos/servicepng.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="0" width="164" height="25" uuid="7816dcac-2253-4d79-80ce-79f59c302203">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electro R S.R.L.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="25" width="164" height="15" uuid="200f0775-e7bc-4b03-91f0-c48f5d32d0a8"/>
+				<text><![CDATA[(domicilio)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="40" width="164" height="15" uuid="117727c4-62ed-4ae6-b08b-0c3592d38f88"/>
+				<text><![CDATA[(localidad, CP)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="55" width="164" height="15" uuid="ded83f2d-f820-40ec-8165-36e84b5051d7"/>
+				<text><![CDATA[(teléfono)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="215" height="30" uuid="7c8a8351-1aec-4951-b6f2-93eb42215cc4"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Contable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="30" width="60" height="30" uuid="0905e3bc-21b5-4c31-98d1-a18dd6bb28a4"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="30" width="10" height="30" uuid="131c0239-0903-484a-9f67-4a283fc60d2e"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[-  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="390" y="30" width="70" height="30" uuid="42021c18-7671-4e7c-bb2b-920973807105"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ini}.getTime()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="30" width="75" height="30" uuid="ec52471e-6e08-4e75-b096-2cb5567748ba"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fin}.getTime()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<rectangle radius="6">
+				<reportElement x="0" y="0" width="555" height="24" backcolor="#006699" uuid="7324d6b9-9473-4eeb-b834-8abf5144e003"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="24" forecolor="#FFFFFF" uuid="aaba0a7e-3bdc-48a4-8ff2-e7c0abddc848"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle Ingresos]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="10" y="30" width="535" height="20" uuid="d4db4704-b6c2-41e5-b833-196c0709b514"/>
+				<dataSourceExpression><![CDATA[$F{ingresosDS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/SubreporteContableOT.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<rectangle radius="6">
+				<reportElement x="0" y="0" width="555" height="24" backcolor="#006699" uuid="4ed3c2c1-eb5b-4633-8851-e422d6a33486"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="24" forecolor="#FFFFFF" uuid="f0707574-d2e4-451c-94b6-ff72f596caf7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle Egresos]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="10" y="30" width="535" height="20" uuid="acc50d3e-0eb4-4006-ae78-b1c3375c76e0"/>
+				<dataSourceExpression><![CDATA[$F{egresosDS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/SubreporteContableSC.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="119">
+			<rectangle radius="6">
+				<reportElement x="0" y="0" width="555" height="24" backcolor="#006699" uuid="3a565ff7-e95c-40af-b3fd-4176a2ef9a34"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="24" forecolor="#FFFFFF" uuid="211e173e-07d3-43e8-9e10-0053fe3f9e93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Totales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="40" width="119" height="19" uuid="959ac8c2-655c-452a-b5f8-50e72683fc90"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total ingresos: $ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="70" width="119" height="19" uuid="94eb4be2-3105-4c6c-9ce1-fa49f11af2dc"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total egresos: $ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="100" width="119" height="19" uuid="adb9959e-989b-49cb-ade6-220bc42d9e4c"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total saldo: $ ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="40" width="110" height="19" uuid="df801025-3c98-4aa0-8ca3-64085977c21f"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalIngresos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="70" width="110" height="19" uuid="fde7edfa-16c6-42a4-a9b9-4e01b8867199"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalEgresos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="100" width="110" height="19" uuid="77ae1dd8-7228-4a1e-ab62-eb1536e4983b"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="120" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="180" y="0" width="200" height="120" uuid="788e0b0b-def9-4cf9-8187-5c919134df1d"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{totalIngresos}]]></seriesExpression>
+						<categoryExpression><![CDATA[0]]></categoryExpression>
+						<valueExpression><![CDATA[$F{totalIngresos}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{totalEgresos}]]></seriesExpression>
+						<categoryExpression><![CDATA[0]]></categoryExpression>
+						<valueExpression><![CDATA[$F{totalEgresos}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

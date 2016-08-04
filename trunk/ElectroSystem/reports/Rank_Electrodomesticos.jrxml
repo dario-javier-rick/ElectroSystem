@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-10T12:33:14 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Rank_Electrodomesticos" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="fc788704-43ae-4e07-977b-332e5131a62e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="electrodomesticos" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="electrodomesticosGraphic" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="81" backcolor="#006699" uuid="34ec5748-6f03-46b8-854c-385b7fa51aaa"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="10" width="535" height="40" forecolor="#FFFFFF" uuid="48e6676e-e69b-4ebe-814f-06e1f9791188"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ELECTRODOMÉSTICOS MÁS REPARADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="50" width="150" height="20" forecolor="#FFFFFF" uuid="edef5873-ab38-4457-8e66-b3dd3c7bfac7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte generado el:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="50" width="70" height="20" forecolor="#FFFFFF" uuid="05ac590e-c46b-4720-aa4a-ccf0b3ae6522"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<subreport>
+				<reportElement x="-1" y="0" width="555" height="30" uuid="0c6fddd7-d45a-4495-b160-8b6f43381960"/>
+				<dataSourceExpression><![CDATA[$P{electrodomesticos}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/SubReportRankElectrodomesticos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="30" uuid="fafd7b77-c48b-4745-844b-337c968338f7"/>
+				<dataSourceExpression><![CDATA[$P{electrodomesticosGraphic}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/SubReportRankElectrodomesticosGraphic.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="21">
+			<textField>
+				<reportElement x="285" y="0" width="215" height="20" uuid="79c5d08e-3cb4-4e37-8099-b0455a4e5e07"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="0" width="55" height="20" uuid="7f194379-97d3-4a33-97ec-ce4df23a7857"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

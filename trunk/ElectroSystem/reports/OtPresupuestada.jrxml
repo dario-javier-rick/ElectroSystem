@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-12T19:02:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OtPresupuestada" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="940dd110-07ee-4c77-a070-538c64c6d10d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cliente" class="dto.ClienteDTO">
+		<fieldDescription><![CDATA[cliente]]></fieldDescription>
+	</field>
+	<field name="electrodomestico" class="dto.ElectrodomesticoDTO">
+		<fieldDescription><![CDATA[electrodomestico]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[descripcion]]></fieldDescription>
+	</field>
+	<field name="vencPresup" class="java.util.Calendar">
+		<fieldDescription><![CDATA[vencPresup]]></fieldDescription>
+	</field>
+	<field name="esDelivery" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[esDelivery]]></fieldDescription>
+	</field>
+	<field name="idOT" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idOT]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="202" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="110" width="54" height="24" uuid="01869680-4318-47f9-9e64-ed7bf196ab5e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="180" width="55" height="20" uuid="35a9ff67-1a2d-41a7-95a0-c094b395835b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Envío: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="134" width="130" height="24" uuid="6996cda7-5602-4e12-9fbf-4c399ed4253d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electrodoméstico: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="158" width="55" height="22" uuid="8aaf1f2d-f0d4-4173-b5fe-9d3e5d47af1c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Falla: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="110" width="325" height="24" uuid="774574e6-5bda-4c6f-9ddc-588fe00a4940"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getApellido().concat(", ").concat($F{cliente}.getNombre())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="134" width="670" height="24" uuid="9094a3e1-18fa-45ba-aa4a-d1139b5d5e1b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{electrodomestico}.getDescripcion().concat(" - ").concat($F{electrodomestico}.getMarca().toString()).concat(" - ").concat($F{electrodomestico}.getModelo().toString())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="158" width="745" height="22" uuid="4190aef3-d7ee-4726-89bd-622c0963c536"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="180" width="746" height="22" uuid="39aed749-6c9e-4c73-a7a1-3aa67d405f9f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{esDelivery} ? "Envío a domicilio" : "Retira en local"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="110" width="70" height="24" uuid="7d03e454-0b7a-4904-9b61-c4b61df673d2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="110" width="350" height="24" uuid="120efa70-24ac-42f8-b219-590fe6e5bc45"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getTelefono()]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="0" y="80" width="800" height="23" backcolor="#006699" uuid="e0eeafc7-3196-4353-9b17-e91ac2da5238"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="80" width="798" height="23" forecolor="#FFFFFF" uuid="2b735124-f118-450e-a123-5086b5d5d832"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comprobante]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="70" height="70" uuid="eeefea07-f8b5-4f70-a267-2073ecdfc0ad"/>
+				<imageExpression><![CDATA["src/recursos/servicepng.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="0" width="164" height="25" uuid="532bafa1-1cda-46b2-9fe7-daa334e27bdf">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electro R S.R.L.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="25" width="164" height="15" uuid="3befa73a-07d1-4217-8e6e-32a9d3d51977"/>
+				<text><![CDATA[(domicilio)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="40" width="164" height="15" uuid="4f4db3d2-c90a-4f0b-98fb-c59e1e98e7a6"/>
+				<text><![CDATA[(localidad, CP)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="55" width="164" height="15" uuid="9e7713f2-7007-4813-ba0d-622680255269"/>
+				<text><![CDATA[(teléfono)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="10" width="181" height="30" uuid="1a7ffb5d-14c4-4412-8458-c38ba82cbea7"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orden de Trabajo Nº]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="721" y="10" width="79" height="30" uuid="cd09665e-b780-42d5-a36a-20a8a3e6dda9"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idOT}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="38">
+			<line>
+				<reportElement x="2" y="20" width="798" height="1" uuid="816d67f9-1cf5-4394-b234-8a95685d47be"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="202">
+			<image>
+				<reportElement x="0" y="0" width="70" height="70" uuid="388b0227-b15b-4585-b7e6-d2cce43d5195"/>
+				<imageExpression><![CDATA["src/recursos/servicepng.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="0" width="164" height="25" uuid="d0cb4517-44fd-4a03-abdb-c87eadd74ca7">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electro R S.R.L.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="25" width="164" height="15" uuid="ba6a9aa9-06e4-4e7f-8419-ac51673aa8e7"/>
+				<text><![CDATA[(domicilio)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="40" width="164" height="15" uuid="33b90987-3243-4b8c-aa12-655060305e72"/>
+				<text><![CDATA[(localidad, CP)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="55" width="164" height="15" uuid="68eef9cb-f469-46b7-98e2-d3c90c6db260"/>
+				<text><![CDATA[(teléfono)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="10" width="181" height="30" uuid="6659e1a3-1f1e-4641-984a-c94accc7c910"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orden de Trabajo Nº]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="721" y="10" width="79" height="30" uuid="94b7a5ca-8c94-46ff-bc17-b1e95b4123a8"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idOT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="80" width="790" height="23" forecolor="#FFFFFF" uuid="866ac7f0-dd2c-42b9-8969-e15872fe1cf1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comprobante]]></text>
+			</staticText>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="0" y="80" width="800" height="23" backcolor="#006699" uuid="119f5885-9aed-46c8-9df0-22a2d5a59ba0"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="110" width="54" height="24" uuid="a0ea1f81-f152-4d3d-bce7-fd8422c17680"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="110" width="325" height="24" uuid="ce3cc5f5-b521-41b3-baf9-17e288f4f3b1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getApellido().concat(", ").concat($F{cliente}.getNombre())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="110" width="70" height="24" uuid="87b25815-5645-4598-ab00-328a5dfb490a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="110" width="350" height="24" uuid="40310a0e-38e7-4bca-b2fd-3a7f6ff5f505"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getTelefono()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="134" width="130" height="24" uuid="360aac9c-008e-45ff-89a6-df9ad8272971"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electrodoméstico: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="134" width="670" height="24" uuid="2fb4fb4d-00ab-4484-814f-98c392d729cf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{electrodomestico}.getDescripcion().concat(" - ").concat($F{electrodomestico}.getMarca().toString()).concat(" - ").concat($F{electrodomestico}.getModelo().toString())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="158" width="55" height="22" uuid="db7a8236-f94d-49e5-af22-190de7cb5e68"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Falla: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="158" width="745" height="22" uuid="336c5c05-f9d9-4da8-ac12-eec59cb17c9b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="180" width="55" height="20" uuid="b61c3082-f673-480e-b04d-9c907a34a084"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Envío: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="54" y="180" width="746" height="22" uuid="3b69e53f-6ec1-4a12-a074-2d8d4bc41edc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{esDelivery} ? "Envío a domicilio" : "Retira en local"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="80" width="798" height="23" forecolor="#FFFFFF" uuid="a67c2bcd-2fd2-45d1-abf9-3445fe629bce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comprobante Cliente]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

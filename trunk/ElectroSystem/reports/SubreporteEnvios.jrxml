@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-09T01:54:47 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubreporteEnvios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cbdb7fe5-90f6-4fc2-9db3-41c6f6e2c4d8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ot" class="dto.OrdenDTO">
+		<fieldDescription><![CDATA[ot]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="510" height="21" backcolor="#ABA9A9" uuid="8ddf7f0b-3eeb-43e6-9155-d91d3fd61623"/>
+				<graphicElement>
+					<pen lineColor="#ABA9A9"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="70" height="21" forecolor="#030000" backcolor="#ABA9A9" uuid="1efb28e7-2ef6-4890-aff8-185aba9fd3f9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orden Nº]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="0" width="140" height="21" forecolor="#030000" backcolor="#ABA9A9" uuid="0488cc3f-8c37-4f4e-93d2-e4e878f7d191"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electrodoméstico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="0" width="165" height="21" forecolor="#030000" backcolor="#ABA9A9" uuid="82e6e687-a973-4c75-bb4f-ba446ae057fd"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="0" width="135" height="21" forecolor="#030000" backcolor="#ABA9A9" uuid="22c1dbb8-2d60-4317-9fb2-43833c580d3f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entregar a]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="70" height="20" uuid="bc0fe87c-484e-4ff9-8436-2726529d05cc"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ot}.getIdOT()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="0" width="140" height="20" uuid="cb9e0acb-60a9-4e87-908d-88f0bf73b6b7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ot}.getElectrodomestico()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="165" height="20" uuid="b8073453-0d8f-429c-ba7c-5e02e359c58e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ot}.getCliente().getDireccion()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="135" height="20" uuid="ba9181e8-a9fc-4ca7-af42-86bc991545d9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ot}.getCliente().getApellido().concat(", ").concat($F{ot}.getCliente().getNombre())]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

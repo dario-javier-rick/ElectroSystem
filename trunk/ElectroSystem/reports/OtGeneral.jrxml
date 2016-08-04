@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-12T18:29:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OtGeneral" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbf3cde0-95e5-475a-888a-04d168b578d7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[descripcion]]></fieldDescription>
+	</field>
+	<field name="presupuestadasDS" class="net.sf.jasperreports.engine.JRDataSource">
+		<fieldDescription><![CDATA[presupuestadasDS]]></fieldDescription>
+	</field>
+	<field name="estado" class="dto.EstadoDTO">
+		<fieldDescription><![CDATA[estado]]></fieldDescription>
+	</field>
+	<field name="electrodomestico" class="dto.ElectrodomesticoDTO">
+		<fieldDescription><![CDATA[electrodomestico]]></fieldDescription>
+	</field>
+	<field name="esDelivery" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[esDelivery]]></fieldDescription>
+	</field>
+	<field name="costoDeEnvio" class="java.lang.Double">
+		<fieldDescription><![CDATA[costoDeEnvio]]></fieldDescription>
+	</field>
+	<field name="cliente" class="dto.ClienteDTO">
+		<fieldDescription><![CDATA[cliente]]></fieldDescription>
+	</field>
+	<field name="idOT" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idOT]]></fieldDescription>
+	</field>
+	<field name="vencPresup" class="java.util.Calendar">
+		<fieldDescription><![CDATA[vencPresup]]></fieldDescription>
+	</field>
+	<field name="fechaReparado" class="java.util.Calendar">
+		<fieldDescription><![CDATA[fechaReparado]]></fieldDescription>
+	</field>
+	<field name="manoDeObra" class="java.lang.Double">
+		<fieldDescription><![CDATA[manoDeObra]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<fieldDescription><![CDATA[total]]></fieldDescription>
+	</field>
+	<field name="totalPiezas" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalPiezas]]></fieldDescription>
+	</field>
+	<field name="cantidadPiezas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[cantidadPiezas]]></fieldDescription>
+	</field>
+	<field name="tecnicoAsoc" class="dto.UsuarioDTO">
+		<fieldDescription><![CDATA[tecnicoAsoc]]></fieldDescription>
+	</field>
+	<field name="piezasConCantidadDS" class="net.sf.jasperreports.engine.JRDataSource">
+		<fieldDescription><![CDATA[piezasConCantidadDS]]></fieldDescription>
+	</field>
+	<field name="piezasPresupuestadas" class="java.util.List">
+		<fieldDescription><![CDATA[piezasPresupuestadas]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="232" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="110" width="552" height="122" uuid="a4e65d9e-f68a-411c-9355-385c1b370609"/>
+				<textField>
+					<reportElement x="460" y="-110" width="79" height="30" uuid="82476cc5-7511-4b75-977f-dcb5694b710f"/>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{idOT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="70" width="130" height="20" uuid="a58d2fd0-78f3-471d-b8c2-8be099a2a79c"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Artículo a reparar: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="90" width="160" height="20" uuid="3b81422f-e99a-4dcd-9040-d6ec00376381"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Descripción de la falla: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="131" height="20" uuid="bf5f9a24-f81f-4ad0-9e0f-e72731a63de0"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre y Apellido: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="20" width="70" height="20" uuid="8fc3cfe9-d928-49b1-a50c-0aa01a3ea0e3"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Domicilio: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="40" width="70" height="20" uuid="e03a8dbe-2555-4541-99b9-ad37a82bca00"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Teléfono: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="201" y="40" width="49" height="20" uuid="d9d44104-2e51-4e68-91aa-32143044e1c1"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Email: ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="130" y="0" width="422" height="20" uuid="ec6c0001-0ca7-4794-ac49-fd0997c94bc3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cliente}.getApellido(). concat(", ").concat($F{cliente}.getNombre())]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="20" width="422" height="20" uuid="fb61f281-05be-4899-9b8f-2f15ea9e020b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{cliente}.getDireccion()!=null) ? $F{cliente}.getDireccion().concat(", ").concat($F{cliente}.getLocalidad().toString()).concat(", ").concat($F{cliente}.getLocalidad().getProvincia()) : " - "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="70" y="40" width="131" height="20" uuid="11cb96ed-650e-40c6-a11f-c0cf47012f87"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{cliente}.getTelefono()!= null) ? $F{cliente}.getTelefono() : " - "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="250" y="40" width="302" height="20" uuid="0941513b-a6d8-413b-941f-24339cf433ba"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{cliente}.geteMail() != null) ? $F{cliente}.geteMail() : " - "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="160" y="90" width="392" height="20" uuid="7b8dd571-0130-4cee-b330-8da9cae52425"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="70" width="422" height="20" uuid="863abcbc-94ab-4bfd-868a-f57d5d2dbfe5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{electrodomestico}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="279" y="-80" width="267" height="20" uuid="8b5fa139-b130-41a4-b338-8a396b625e6a"/>
+					<textElement textAlignment="Left">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Estado: " + $F{estado}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="0" y="0" width="70" height="70" uuid="56328054-818a-4ebd-954f-d2df88160217"/>
+				<imageExpression><![CDATA["src/recursos/servicepng.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="0" width="164" height="25" uuid="83c1b956-0dd3-4260-902a-cbd5937ebe33">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electro R S.R.L.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="25" width="164" height="15" uuid="3e724a6d-9cdb-41b5-ba8a-ae01e0ab025d"/>
+				<text><![CDATA[(domicilio)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="40" width="164" height="15" uuid="6513845a-ddba-4e10-8e23-da0def4c60c4"/>
+				<text><![CDATA[(localidad, CP)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="55" width="164" height="15" uuid="a583292f-e4ec-4985-99a4-3ace0daaee0a"/>
+				<text><![CDATA[(teléfono)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="181" height="30" uuid="b5d217ee-81c6-424b-b419-20bf9f364de0"/>
+				<textElement textAlignment="Left">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orden de Trabajo Nº]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="554" height="23" forecolor="#FFFFFF" uuid="540d85e6-6a82-453b-a37d-b85a979b4569"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presupuesto]]></text>
+			</staticText>
+			<rectangle radius="6">
+				<reportElement mode="Opaque" x="0" y="80" width="554" height="23" backcolor="#006699" uuid="edadd272-16bf-431a-94fe-e66a799f41af"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="80" width="551" height="23" forecolor="#FFFFFF" uuid="f1695a2f-6298-4aac-8824-5628f70e64de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos del Cliente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="50" width="200" height="20" uuid="9168e8ab-7ed1-49d1-82b4-c42a5d2cfb34"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{estado}.getId() == 7) ? "Se terminó la reparación el día: " : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="50" width="67" height="20" uuid="4c9ae3d3-3791-4238-848d-395a3a27a03c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{estado}.getId() == 7) ? $F{fechaReparado}.getTime() : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="3" width="553" height="20" uuid="b50017c2-8bd2-4cff-8e99-4d2c9dfb9d8f"/>
+				<rectangle radius="6">
+					<reportElement mode="Opaque" x="-1" y="-3" width="554" height="23" backcolor="#006699" uuid="1bd4c642-847a-4a07-be28-3618e6b083e7"/>
+					<graphicElement>
+						<pen lineColor="#006699"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="-1" y="-3" width="553" height="23" forecolor="#FFFFFF" uuid="33dfe0cc-22df-4b64-934c-4c078cb7cd97"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Presupuesto]]></text>
+				</staticText>
+				<subreport>
+					<reportElement x="0" y="21" width="553" height="19" uuid="fe9dd2bf-6656-4491-9aab-4e9965e50c27"/>
+					<dataSourceExpression><![CDATA[$F{piezasConCantidadDS}]]></dataSourceExpression>
+					<subreportExpression><![CDATA["reports/SubreportePresupuestadas.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="20" width="110" height="20" uuid="3425f68a-4d8a-47dc-81b0-3e6d68f0a63c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cantidadPiezas} != 0) ? $F{cantidadPiezas} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="20" width="419" height="20" uuid="fabdbf30-69f7-40d1-a0ca-d9488c81eb80"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cantidadPiezas} != 0) ? "Cantidad de piezas presupuestadas: " : "No se presupuestó la orden de trabajo todavía."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="255">
+			<rectangle radius="6">
+				<reportElement x="0" y="0" width="554" height="24" backcolor="#006699" uuid="64c0c8df-27c1-48bc-bdaf-f6685b00a762"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement x="0" y="35" width="554" height="205" uuid="2dc553fd-10d8-4a90-878d-5766dc0c29ab"/>
+				<textField>
+					<reportElement x="11" y="94" width="169" height="20" uuid="c1964cc4-7343-4399-ad2e-dbb14ffd267f"/>
+					<textElement textAlignment="Left">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId()==2 ? "El presupuesto vence el: " : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="62" width="100" height="20" uuid="2ee4430c-e5ab-4940-9c05-7e40f3e7692c"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[( $F{estado}.getId() != 1 ? (($F{cantidadPiezas} != 0) ? $F{total} : "0.0") : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="41" width="259" height="20" uuid="b4125b65-04b7-4fdb-acf6-3e2c4776a79d"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[( $F{estado}.getId() != 1 ? ($F{cantidadPiezas} != 0 ?
+	($F{esDelivery} == true ? $F{costoDeEnvio} :
+		($F{esDelivery} == false ? "0.00 - Retira en sucursal." :
+		""
+		) 
+	) : "0.00"
+  ) : ""
+)]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="20" width="100" height="20" uuid="1c82b2fc-d6d2-46c3-88d9-b703b9b59e08"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() != 1 ? (($F{cantidadPiezas} != 0) ? $F{manoDeObra} : "0.0") : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="130" y="0" width="100" height="20" uuid="04ef5c29-6408-4425-abb9-9d80c7071c20"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() != 1 ? $F{totalPiezas} : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="263" y="181" width="189" height="24" uuid="aca522b0-5587-468a-b12f-57f6d3e4844d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{tecnicoAsoc} != null) ? $F{tecnicoAsoc}.getApellido().concat(", ").concat($F{tecnicoAsoc}.getNombre()) : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="11" y="181" width="251" height="24" uuid="d12d5af0-12b9-417d-b684-f41646665578"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{tecnicoAsoc} != null) ? "Presupuesto realizado por el técnico: " : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="11" y="120" width="169" height="20" uuid="6c7b9276-4217-45f2-a9d5-fdad2a2f6abf"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fechaReparado} == null ? "Artículo no reparado." : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="180" y="94" width="70" height="20" uuid="0245a2e3-a06b-4740-a5a7-db803452ecc3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId()==2 ? $F{vencPresup}.getTime() : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="11" y="150" width="269" height="20" uuid="81840546-0fec-440f-a55b-40ce3c299b19"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() == 4 ? "El cliente no aprobó el presupuesto." : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="20" y="20" width="111" height="20" uuid="214561e5-25ed-4f68-9a21-99c3b4f9b37e"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() != 1 ? "Mano de  obra: $ " : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="20" y="0" width="110" height="20" uuid="fda76e42-7dc5-4b8b-ab6c-cb9fb931a223"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() != 1 ? "Total piezas: $ " : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="20" y="62" width="110" height="20" uuid="72e0ae1d-d642-4274-860d-ddb877464874"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() != 1 ? "Total: $ " : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="20" y="41" width="110" height="20" uuid="1b54b1dd-f3eb-4414-842e-d6fc0581d8a5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{estado}.getId() != 1 ? "Costo de envío: $ " : ""]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="1" y="0" width="552" height="23" forecolor="#FFFFFF" uuid="7e5c8140-1b74-499e-9cc6-c543b95dd574"/>
+				<box>
+					<topPen lineColor="#006699"/>
+					<leftPen lineColor="#006699"/>
+					<bottomPen lineColor="#006699"/>
+					<rightPen lineColor="#006699"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalles]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="285" y="0" width="215" height="20" uuid="2fc8fb9c-0d69-4ee0-a431-cbf225ea1358"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="0" width="55" height="20" uuid="e67dc0a4-3aee-400c-9af5-d3b9e72fe800"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30" splitType="Stretch"/>
+	</summary>
+</jasperReport>

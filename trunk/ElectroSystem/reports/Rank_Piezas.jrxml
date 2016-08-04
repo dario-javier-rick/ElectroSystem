@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-06-10T08:33:00 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Rank_Piezas" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="82a3c200-2a4f-452b-b1f2-a8f93638d068">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="piezas" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="piezasGraphic" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="pieza" class="java.lang.String"/>
+	<field name="marca" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="81" backcolor="#006699" uuid="230edbf8-5e23-412a-a0cc-5ecda39eaad3"/>
+				<graphicElement>
+					<pen lineColor="#006699"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="10" width="535" height="40" forecolor="#FFFFFF" uuid="1b49b5e4-05bf-4396-aba1-366568b795b1"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PIEZAS MÁS INSUMIDAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="50" width="150" height="20" forecolor="#FFFFFF" uuid="2e764f03-2de0-4063-af5d-872ce6db3396"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte generado el:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="476" y="50" width="70" height="20" forecolor="#FFFFFF" uuid="bc69534f-8dfb-4c1a-be7d-b05840e6503d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<subreport>
+				<reportElement x="-1" y="0" width="555" height="30" uuid="40c0b208-15f7-4ce0-9373-2be5077cc476"/>
+				<dataSourceExpression><![CDATA[$P{piezas}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/SubReportRankPiezas.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="30" uuid="97b7ebc3-c9b3-4503-8d20-d9a3607f28c8"/>
+				<dataSourceExpression><![CDATA[$P{piezasGraphic}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/SubReportRankPiezasGraphic.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="285" y="0" width="215" height="20" uuid="36ff2e94-6617-40a2-81ba-3dd3b114755e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="0" width="55" height="20" uuid="621720b1-b304-4bc1-b117-5b42c8ad5441"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
